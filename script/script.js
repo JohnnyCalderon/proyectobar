@@ -173,7 +173,7 @@ $(".lonchCont").droppable({
          // console.log($ (ui.draggable).attr("class"))
          console.log("contadorLonchera")
           console.log(contadorLonchera)
-          if(contadorLonchera<=2){
+          if(contadorLonchera<7){
             contadorLonchera++
             if ($ (ui.draggable).hasClass("reguladores")) {
 
@@ -182,6 +182,7 @@ $(".lonchCont").droppable({
               return
           }
           if ($ (ui.draggable).hasClass( "dañinos") ) {
+            window.alert("Cuidado. alimento dañinos");
             console.log("entre")
             $( ".cont1" ).append( ui.draggable /*, audioElement.play()*/ );    
             puntajeJuego +=  element.puntos;   
@@ -203,6 +204,7 @@ $(".lonchCont").droppable({
             let contenedor=element.categoria;
             console.log(contenedor)
             $("#"+contenedor).append( ui.draggable )
+            window.alert("lonchera llena tu puntaje es" +puntajeJuego );
           }
       
       }
